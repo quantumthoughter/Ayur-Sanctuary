@@ -1,0 +1,28 @@
+{
+  "name": "asi-sanctuary",
+  "private": true,
+  "version": "1.0.0",
+  "description": "ASI — Ayur Sanctuary International. A living conscious digital ecosystem for sovereign remembrance.",
+  "type": "module",
+  "workspaces": [
+    "packages/core",
+    "packages/engine",
+    "packages/server",
+    "packages/web"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:web\"",
+    "dev:server": "npm run dev -w packages/server",
+    "dev:web": "npm run dev -w packages/web",
+    "dev:engine": "npm run dev -w packages/engine",
+    "typecheck": "npm run typecheck -w packages/core && npm run typecheck -w packages/engine && npm run typecheck -w packages/web",
+    "build": "npm run build -w packages/core && npm run build -w packages/engine && npm run build -w packages/server && npm run build -w packages/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=26.0.0"
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="ayur-resort">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#faf3e0" />
+    <meta name="description" content="ASI — Ayur Sanctuary International. A living conscious digital ecosystem for sovereign remembrance." />
+    <title>ASI — Ayur Sanctuary International</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body, #root { width: 100%; height: 100%; overflow: hidden; }
+
+      :root, html.ayur-resort {
+        --bg-primary: #faf3e0;
+        --bg-secondary: #f5ebd0;
+        --bg-tertiary: #efe3c0;
+        --text-primary: #3e2a1e;
+        --text-secondary: #5c4033;
+        --text-muted: #8d6e63;
+        --accent: #e07a5f;
+        --accent-hover: #f4a261;
+        --sandalwood: #d4a373;
+        --palm: #2a9d8f;
+        --amber: #ffb703;
+      }
+
+      html.ayur-lotus {
+        --bg-primary: #fdf6f0;
+        --bg-secondary: #f8eee8;
+        --bg-tertiary: #f3e5dc;
+        --text-primary: #3d2c3a;
+        --text-secondary: #5e4b5a;
+        --text-muted: #9a7aa0;
+        --accent: #c77d9a;
+        --accent-hover: #e8a87c;
+        --sandalwood: #b8a9c9;
+        --palm: #7ebc9e;
+        --amber: #f4c2c2;
+      }
+
+      html.ayur-moonlight {
+        --bg-primary: #1a1620;
+        --bg-secondary: #241e2c;
+        --bg-tertiary: #2e2638;
+        --text-primary: #e8e0d0;
+        --text-secondary: #c4b8a8;
+        --text-muted: #8a7a6a;
+        --accent: #c48a7a;
+        --accent-hover: #d4a574;
+        --sandalwood: #a0897a;
+        --palm: #5a8a7a;
+        --amber: #d4b87a;
+      }
+
+      body {
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        font-family: 'Inter', sans-serif;
+        transition: background 0.5s ease, color 0.5s ease;
+      }
+
+      ::-webkit-scrollbar { width: 5px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: var(--sandalwood); opacity: 0.3; border-radius: 3px; }
+    </style>
+    <link rel="stylesheet" href="/animations.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
