@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import type { ReactNode, CSSProperties } from "react";
 import { MicroParticles } from "./MicroParticles";
 
@@ -24,6 +25,8 @@ const PORTAL_BG_VIDEOS: Record<string, string> = {
   detox: "/videos/Shirodhara_crispr.mp4",
   welcome: "/videos/a_great_amazing_welcome_video.mp4",
   celestial: "/videos/Himalaya_egy_sh.mp4",
+  "gretto-detox": "/videos/gretto-detox_chamber.mp4",
+  amethyst: "/videos/amethyst_chamber.mp4",
 };
 
 interface PortalImageBgProps {
@@ -33,6 +36,7 @@ interface PortalImageBgProps {
   overlayOpacity?: number;
   brightness?: number;
   contentMaxWidth?: number;
+  playbackRate?: number;
   style?: CSSProperties;
 }
 
@@ -41,10 +45,18 @@ export function PortalImageBg({
   overlayOpacity = 0.25,
   brightness = 0.5,
   contentMaxWidth = 700,
+  playbackRate = 1,
   style,
 }: PortalImageBgProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const imagePath = imageKey ? PORTAL_BG_IMAGES[imageKey] : undefined;
   const videoPath = videoKey ? PORTAL_BG_VIDEOS[videoKey] : undefined;
+
+  useEffect(() => {
+    if (videoRef.current && playbackRate !== 1) {
+      videoRef.current.playbackRate = playbackRate;
+    }
+  }, [playbackRate, videoPath]);
 
   return (
     <div style={{
@@ -63,6 +75,7 @@ export function PortalImageBg({
       {/* Video background */}
       {videoPath && (
         <video
+          ref={videoRef}
           autoPlay muted loop playsInline
           style={{
             position: "fixed", inset: 0, zIndex: 0,

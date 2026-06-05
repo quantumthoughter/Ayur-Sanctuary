@@ -86,9 +86,9 @@ export default function App() {
         {view === "music" && <CrystalChamber imageKey="music"><BackButton onClick={goToGates} /><MusicPortal resonanceKey={resonanceKey} /></CrystalChamber>}
         {view === "certification" && <CrystalChamber imageKey="dhanvantari"><BackButton onClick={goToGates} /><ASICertification resonanceKey={resonanceKey} /></CrystalChamber>}
         {view === "core" && <CrystalChamber imageKey="arrival"><BackButton onClick={goToGates} /><SovereignCore resonanceKey={resonanceKey} onNavigate={navigateTo} /></CrystalChamber>}
-        {view === "calibration" && <CrystalChamber imageKey="silence"><BackButton onClick={goToGates} /><CrystalCalibration resonanceKey={resonanceKey} /></CrystalChamber>}
+        {view === "calibration" && <CrystalChamber imageKey="silence" videoKey="amethyst" playbackRate={0.5}><BackButton onClick={goToGates} /><CrystalCalibration resonanceKey={resonanceKey} /></CrystalChamber>}
         {view === "breathwork" && <CrystalChamber imageKey="breathwork"><BackButton onClick={goToGates} /><BreathworkHall resonanceKey={resonanceKey} /></CrystalChamber>}
-        {view === "detox" && <CrystalChamber imageKey="detox" videoKey="detox"><BackButton onClick={goToGates} /><DetoxGrotto resonanceKey={resonanceKey} /></CrystalChamber>}
+        {view === "detox" && <CrystalChamber imageKey="detox" videoKey="gretto-detox" playbackRate={0.5}><BackButton onClick={goToGates} /><DetoxGrotto resonanceKey={resonanceKey} /></CrystalChamber>}
         {view === "somatic" && <CrystalChamber imageKey="somatic"><BackButton onClick={goToGates} /><SomaticWisdom resonanceKey={resonanceKey} /></CrystalChamber>}
         {view === "celestial" && <CrystalChamber imageKey="celestial" videoKey="celestial"><BackButton onClick={goToGates} /><CelestialNavigation resonanceKey={resonanceKey} /></CrystalChamber>}
         {view === "union" && <CrystalChamber imageKey="meditation" videoKey="union"><BackButton onClick={goToGates} /><TempleOfUnion resonanceKey={resonanceKey} /></CrystalChamber>}

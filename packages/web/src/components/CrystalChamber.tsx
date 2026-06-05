@@ -8,11 +8,12 @@ interface CrystalChamberProps {
   compact?: boolean;
   imageKey?: string;
   videoKey?: string;
+  playbackRate?: number;
 }
 
-export function CrystalChamber({ children, title, subtitle, compact, imageKey, videoKey }: CrystalChamberProps) {
+export function CrystalChamber({ children, title, subtitle, compact, imageKey, videoKey, playbackRate }: CrystalChamberProps) {
   return (
-    <PortalImageBg imageKey={imageKey} videoKey={videoKey} overlayOpacity={0.25} brightness={0.5} contentMaxWidth={compact ? undefined : 700}>
+    <PortalImageBg imageKey={imageKey} videoKey={videoKey} playbackRate={playbackRate} overlayOpacity={0.25} brightness={0.5} contentMaxWidth={compact ? undefined : 700}>
       {(title || subtitle) && (
         <div style={{ marginBottom: 20, textAlign: "center" }}>
           {title && <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, fontWeight: 400, color: "#fff7d6", letterSpacing: 1, marginBottom: subtitle ? 6 : 0 }}>{title}</h1>}
